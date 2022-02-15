@@ -6,9 +6,10 @@ export function createjsPanel() {
             width: 400,
             height: 400
         },
-        content: '<input type="text" id="name" /> <input type="date" id="date" /><input type="color" id="color" /><input type="text" id="disc" /><p><button onclick=send()>Send</button></p> ',
-
+        content: '<input type="text" id="name" /> <input type="date" id="date" /><input type="color" id="color" /><input type="text" id="disc" /><p><button class="modal__btn">Send</button></p> '
     });
+
+    $('.modal__btn').on('click', send)
 }
 
 function send() {
@@ -18,15 +19,16 @@ function send() {
     var disc = $('#disc').val();
     var pole_id = 0;
     var pos = 0;
+
     $.ajax({
         type: "POST",
-        url: "../server/new-card.php",
+        url: "/server/new-card.php",
         data: {name:name, date:date, color:color, disc:disc, pole_id:pole_id, pos:pos},
         success: function (response) {
                 console.log(response);
-         },
-         error: function(jqXHR, textStatus, errorThrown) {
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
             console.log(textStatus, errorThrown);
-         }
+        }
     });
 }
