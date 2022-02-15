@@ -1,10 +1,14 @@
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
-        <link href="../assets/styles/jspanel/dist/jspanel.css" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.css" rel="stylesheet">
+        <!-- <link href="../assets/styles/jspanel/dist/jspanel.css" rel="stylesheet"> -->
     </head>
     <body>
-        <link href="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.css" rel="stylesheet">
+        <button class='add__card'>New card</button>
+
         <!-- jsPanel JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/jspanel.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -15,8 +19,7 @@
         <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/extensions/layout/jspanel.layout.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/extensions/contextmenu/jspanel.contextmenu.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.12.0/dist/extensions/dock/jspanel.dock.js"></script>
-        <script src="../assets/scripts/new_card.js"></script>
+        <script type='module' src="assets/scripts/app.js"></script>
 
-    <button onclick="createjsPanel()">New card</button>
     </body>
 </html>

@@ -1,4 +1,4 @@
-function createjsPanel() {
+export function createjsPanel() {
     var nc = jsPanel.create({
         headerTitle: "Новая карточка",
         theme: 'dark',
@@ -7,7 +7,7 @@ function createjsPanel() {
             height: 400
         },
         content: '<input type="text" id="name" /> <input type="date" id="date" /><input type="color" id="color" /><input type="text" id="disc" /><p><button onclick=send()>Send</button></p> ',
-        
+
     });
 }
 
