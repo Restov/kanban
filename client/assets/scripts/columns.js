@@ -11,7 +11,7 @@ export function createColumn() {
 
 function sendNewColumn(data) {
     $.ajax({
-        url: '../../../server/new-pole.php',
+        url: '/server/new-pole.php',
         type: 'POST',
         data,
         success: () => renderKanban(),
