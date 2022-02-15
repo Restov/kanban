@@ -16,7 +16,7 @@ if (!$conn) {
 }
 
 $name = $_POST['name'];
-$date = date('Y-m-d H:i:s');
+$date = $_POST['date']; 
 $disc = $_POST['disc'];
 $color = $_POST['color'];
 $pole_id = $_POST['pole_id'];
