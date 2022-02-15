@@ -20,6 +20,6 @@ function send() {
     $.ajax({
         type: "POST",
         url: "new-card.php",
-        data: {Name:name, Date:date, Color:color, Disc:disc, Pole_id:pole_id, Pos:pos}
+        data: {name:name, date:date, color:color, disc:disc, pole_id:pole_id, pos:pos}
     });
 }
