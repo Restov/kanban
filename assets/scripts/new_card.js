@@ -6,7 +6,20 @@ function createjsPanel() {
             width: 400,
             height: 400
         },
-        content: '<form> <p><b>Наименование</b></p>            <p><input type="text" size="20"><Br>            <p><b>Дата создания</b></p>            <p><input type="date"><Br>            <p><b>Выберите цвет</b></p>            <p><input type="color"><Br>            <p><b>Описание</b></p>            <p><input type="text" size="20"><Br>            <p><input type="submit"></p>        </form>',
+        content: '<form> <p><b>Наименование</b></p>            <p><input name="name" type="text" size="20"><Br>            <p><b>Дата создания</b></p>            <p><input name="date" type="date"><Br>            <p><b>Выберите цвет</b></p>            <p><input name="color" type="color"><Br>            <p><b>Описание</b></p>            <p><input name="disc" type="text" size="20"><Br>            <p><input onclick=send() type="submit"></p>        </form>',
 
+    });
+}
+function send() {
+    var name = $('#name').val();
+    var date = $('#date').val();
+    var color = $('#color').val();
+    var disc = $('#disc').val();
+    var pole_id = 0;
+    var pos = 0;
+    $.ajax({
+        type: "POST",
+        url: "new-card.php",
+        data: {Name:name, Date:date, Color:color, Disc:disc, Pole_id:pole_id, Pos:pos}
     });
 }
