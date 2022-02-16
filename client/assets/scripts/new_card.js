@@ -23,12 +23,8 @@ function send() {
     $.ajax({
         type: "POST",
         url: "/server/new-card.php",
-        data: {name:name, date:date, color:color, disc:disc, pole_id:pole_id, pos:pos},
-        success: function (response) {
-                console.log(response);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.log(textStatus, errorThrown);
-        }
+        data: { name: name, date: date, color: color, disc: disc, poleid: pole_id, pos: pos },
+        success: (response) =>console.log(response),
+        error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
 }
