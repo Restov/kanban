@@ -128,16 +128,16 @@ button {
     transition: fill .2s linear;
 }
 
-.new__card:hover {
+.add__card:hover {
     background: #FFC047;
     color: #FFFFFF;
 }
 
-.new__card:hover .add__image {
+.add__card:hover .add__image {
     fill: #FFFFFF;
 }
 
-.new__cardText {
+.add__cardText {
     margin-left: 10px;
 }
 
