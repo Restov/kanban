@@ -30,7 +30,7 @@ button {
     line-height: 28px;
 }
 
-.add__column {
+.add__columns {
     width: 200px;
     height: 40px;
 
@@ -106,7 +106,7 @@ button {
     height: 394px;
     padding: 12px;
 }
-.new__card {
+.add__card {
     width: 100%;
     padding: 10px 50px;
     display: flex;
