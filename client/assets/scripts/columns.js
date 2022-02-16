@@ -3,10 +3,14 @@ export function createColumn() {
 
     let data = {
         title: 'Пустое поле',
-        id
+        id // зачем айди тут бтв? в бд это автоинкремент
     };
 
     sendNewColumn(data);
+}
+
+function renderKanban(){
+
 }
 
 function sendNewColumn(data) {

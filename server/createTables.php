@@ -1,7 +1,7 @@
 <?php
 include "db.php";
 
-$ourData = file_get_contents("../assets/data.json");
+$ourData = file_get_contents("../client/assets/data.json");
 
 $object = json_decode($ourData);
 

@@ -14,9 +14,5 @@ function createnNewPole($conn, $name, $pos)
 
 function createnNewEvent($conn, $name, $date, $disc, $color, $poleid, $pos)
 {
-   // $id_count = createQuery($conn, "SELECT COUNT(*) as count FROM poles");
-   // if(!$poleid < $id_count){
-        createQuery($conn, "INSERT events (name,date_create,opisanie,color_sob,id_pole,num_pos) values('$name','$date','$disc','$color','$poleid','$pos')");
-  //  }
-    
+    createQuery($conn, "INSERT events (name,date_create,opisanie,color_sob,id_pole,num_pos) values('$name','$date','$disc','$color','$poleid','$pos')");
 }
