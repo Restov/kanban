@@ -41,10 +41,8 @@ export function initDraggable() {
 
         $(this).on('drop', () => {
             if (this !== currentList && !nextElement) {
-                return $(this).find('.column__content')[0].append(activeElement);
+                $(this).find('.column__content')[0].append(activeElement);
             }
-
-            $(this).find('.column__content')[0].insertBefore(activeElement, nextElement);
         });
     });
 };
