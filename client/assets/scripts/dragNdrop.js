@@ -51,21 +51,21 @@ export function initDraggable() {
     });
 };
 
-function getPositionsIntoColumn(currentColumn, idColumn) {
+function getPositionsIntoColumn(currentColumn) {
     let positions = '';
 
     const $events = $(currentColumn).find('.column__item');
     $events.each((index, event) => {
         let idEvent = event.getAttribute('data-id-event');
 
-        positions += `${idColumn}:${idEvent} `;
+        positions += `${index}:${idEvent} `;
     })
 
     return positions.trim();
 }
 
 function initRecvDataAfterDrag(currentColumn, idEvent, idColumn) {
-    let positions = getPositionsIntoColumn(currentColumn, idColumn);
+    let positions = getPositionsIntoColumn(currentColumn);
 
     const data = {
         idEvent,
