@@ -7,7 +7,7 @@ export function initDraggable() {
         const $events = $(this).find('.column__item');
 
         $events.each((index, event) => {
-            event.draggable = true
+            event.draggable = true;
         });
 
         $(this).on('dragstart', (event) => {
@@ -36,8 +36,7 @@ export function initDraggable() {
                         currentElement.parentNode.nextElementSibling : currentElement.parentNode;
 
             $(this).find('.column__content')[0].insertBefore(activeElement, nextElement);
-            nextElement = null
-        })
+        });
 
         $(this).on('drop', () => {
             if (this !== currentList && !nextElement) {
@@ -45,7 +44,7 @@ export function initDraggable() {
             }
 
             $(this).find('.column__content')[0].insertBefore(activeElement, nextElement);
-        })
+        });
     });
 };
 
