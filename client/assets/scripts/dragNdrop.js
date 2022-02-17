@@ -84,7 +84,8 @@ function sendPositionsAfterDrag(activeElement, currentColumn, index) {
         type: 'POST',
         url: '/server/update-pos.php',
         data,
-        success: () => console.log('Positions have been updated.'),
+      //  success: () => console.log('Positions have been updated.'),
+        success: (responce) => console.log(responce),
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     })
 }

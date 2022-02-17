@@ -1,5 +1,5 @@
 export function createjsPanel() {
-    var nc = jsPanel.create({
+    jsPanel.create({
         headerTitle: "Новая карточка",
         theme: 'dark',
         panelSize: {
@@ -17,13 +17,11 @@ function send() {
     var date = $('#date').val();
     var color = $('#color').val();
     var disc = $('#disc').val();
-    var pole_id = 0;
-    var pos = 0;
 
     $.ajax({
         type: "POST",
         url: "/server/new-card.php",
-        data: { name: name, date: date, color: color, disc: disc, poleid: pole_id, pos: pos },
+        data: { name: name, date: date, color: color, disc: disc},
         success: (response) =>console.log(response),
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });

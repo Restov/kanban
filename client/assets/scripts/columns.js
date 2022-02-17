@@ -5,7 +5,7 @@ export function createColumn() {
 
     let data = {
         title: 'Пустое поле',
-        id // зачем айди тут бтв? в бд это автоинкремент
+        id
     };
 
     sendNewColumn(data);
