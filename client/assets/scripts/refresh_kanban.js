@@ -1,15 +1,14 @@
-function refresh_kanban() {
-
-    $(document).ready(function () {
-        $.ajax({
-          //create an ajax request to display.php
-          type: "GET",
-          url: "refresh.php",
-          dataType: "text", //expect html to be returned
-          success: function (response) {
-            // console.log(response);
+export function refresh_kanban() {
+    let str;
+    $.ajax({
+        type: "GET",
+        url: "/server/refresh.php",
+        dataType: "text", //expect html to be returned
+        success: function(response) {
             alert(response);
-          },
-        });
+            str = response;
+            alert(str);
+        },
+        error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
 }
