@@ -1,3 +1,5 @@
+import { refreshKanban } from "./refresh_kanban.js";
+
 export function createColumn() {
     let id = $('.columns').length;
 
@@ -9,16 +11,12 @@ export function createColumn() {
     sendNewColumn(data);
 }
 
-function renderKanban(){
-
-}
-
 function sendNewColumn(data) {
     $.ajax({
         type: 'POST',
         url: '/server/new-pole.php',
         data,
-        success: () => renderKanban(),
+        success: () => refreshKanban(),
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
 }
