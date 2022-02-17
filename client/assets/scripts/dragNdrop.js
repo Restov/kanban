@@ -14,6 +14,7 @@ export function initDraggable() {
             setTimeout(() => event.target.classList.add('selected'), 0);
             activeElement = event.target;
             currentList = this;
+            nextElement = null
         });
 
         $(this).on('dragend', (event) => {
