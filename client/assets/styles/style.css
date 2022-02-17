@@ -106,6 +106,7 @@ button {
     height: 394px;
     padding: 12px;
 }
+
 .add__card {
     width: 100%;
     padding: 10px 50px;
@@ -128,16 +129,16 @@ button {
     transition: fill .2s linear;
 }
 
-.new__card:hover {
+.add__card:hover {
     background: #FFC047;
     color: #FFFFFF;
 }
 
-.new__card:hover .add__image {
+.add__card:hover .add__image {
     fill: #FFFFFF;
 }
 
-.new__cardText {
+.add__cardText {
     margin-left: 10px;
 }
 
@@ -145,7 +146,7 @@ button {
     width: 100%;
     overflow: hidden;
 
-
+    cursor: pointer;
 
     margin-bottom: 25px;
 
