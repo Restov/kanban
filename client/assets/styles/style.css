@@ -193,3 +193,7 @@ button {
 
     color: #A1A1A1;
 }
+
+.selected {
+    opacity: 0;
+}
