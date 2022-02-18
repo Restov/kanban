@@ -1,16 +1,14 @@
+import { refreshKanban } from "./refresh_kanban.js";
+
 export function createColumn() {
     let id = $('.columns').length;
 
     let data = {
         title: 'Пустое поле',
-        id // зачем айди тут бтв? в бд это автоинкремент
+        id
     };
 
     sendNewColumn(data);
-}
-
-function renderKanban(){
-
 }
 
 function sendNewColumn(data) {
@@ -18,7 +16,7 @@ function sendNewColumn(data) {
         type: 'POST',
         url: '/server/new-pole.php',
         data,
-        success: () => renderKanban(),
+        success: () => refreshKanban(),
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
 }

@@ -14,14 +14,15 @@ export function initDraggable() {
             if (event.target.classList.contains('column__item')) {
                 activeElement = event.target;
                 currentColumn = this;
-                nextElement = null
+                nextElement = null;
                 setTimeout(() => event.target.classList.add('selected'), 0);
             }
         });
 
         $(this).on('dragend', (event) => {
             event.target.classList.remove('selected');
-        })
+            activeElement = null;
+        });
 
         $(this).on('dragover', (event) => {
             event.preventDefault();
@@ -69,7 +70,7 @@ function getPositionsIntoColumn(currentColumn) {
         let idEvent = event.getAttribute('data-id-event');
 
         positions += `${index}:${idEvent} `;
-    })
+    });
 
     return positions.trim();
 }
@@ -94,7 +95,8 @@ function sendPositionsAfterDrag(activeElement, currentColumn, index) {
         type: 'POST',
         url: '/server/update-pos.php',
         data,
-        success: () => console.log('Positions have been updated.'),
+      //  success: () => console.log('Positions have been updated.'),
+        success: (responce) => console.log(responce),
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
-    })
+    });
 }

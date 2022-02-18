@@ -1,14 +1,10 @@
-export function refresh_kanban() {
-    let str;
+export function refreshKanban() {
     $.ajax({
         type: "GET",
         url: "/server/refresh.php",
-        dataType: "text", //expect html to be returned
-        success: function(response) {
-            alert(response);
-            str = response;
-            alert(str);
-        },
+        dataType: "text", 
+        success: (response) =>
+            console.log(JSON.stringify(response)),
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
 }
