@@ -11,26 +11,18 @@ export function initDraggable() {
         });
 
         $(this).on('dragstart', (event) => {
-            if (event.target.classList.contains('column__item')) {
-                activeElement = event.target;
-                currentColumn = this;
-                setTimeout(() => event.target.classList.add('selected'), 0);
-            }
+            setTimeout(() => event.target.classList.add('selected'), 0);
+            activeElement = event.target;
+            currentColumn = this;
+            nextElement = null
         });
 
         $(this).on('dragend', (event) => {
             event.target.classList.remove('selected');
-            activeElement = null;
-            nextElement = null;
-            currentColumn = null;
-        });
+        })
 
         $(this).on('dragover', (event) => {
             event.preventDefault();
-
-            if (!activeElement) {
-                return;
-            }
 
             const currentElement = event.target;
 
@@ -50,10 +42,6 @@ export function initDraggable() {
         });
 
         $(this).on('drop', () => {
-            if (!activeElement) {
-                return;
-            }
-
             if (this !== currentColumn && !nextElement) {
                 $(this).find('.column__content')[0].append(activeElement);
 
@@ -71,7 +59,7 @@ function getPositionsIntoColumn(currentColumn) {
         let idEvent = event.getAttribute('data-id-event');
 
         positions += `${index}:${idEvent} `;
-    });
+    })
 
     return positions.trim();
 }
@@ -99,5 +87,5 @@ function sendPositionsAfterDrag(activeElement, currentColumn, index) {
       //  success: () => console.log('Positions have been updated.'),
         success: (responce) => console.log(responce),
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
-    });
+    })
 }
