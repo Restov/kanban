@@ -11,10 +11,12 @@ export function initDraggable() {
         });
 
         $(this).on('dragstart', (event) => {
-            setTimeout(() => event.target.classList.add('selected'), 0);
-            activeElement = event.target;
-            currentColumn = this;
-            nextElement = null
+            if (event.target.classList.contains('column__item')) {
+                activeElement = event.target;
+                currentColumn = this;
+                nextElement = null
+                setTimeout(() => event.target.classList.add('selected'), 0);
+            }
         });
 
         $(this).on('dragend', (event) => {
@@ -23,6 +25,10 @@ export function initDraggable() {
 
         $(this).on('dragover', (event) => {
             event.preventDefault();
+
+            if (!activeElement) {
+                return;
+            }
 
             const currentElement = event.target;
 
@@ -42,6 +48,10 @@ export function initDraggable() {
         });
 
         $(this).on('drop', () => {
+            if (!activeElement) {
+                return;
+            }
+
             if (this !== currentColumn && !nextElement) {
                 $(this).find('.column__content')[0].append(activeElement);
 
