@@ -14,7 +14,6 @@ export function initDraggable() {
             if (event.target.classList.contains('column__item')) {
                 activeElement = event.target;
                 currentColumn = this;
-                nextElement = null;
                 setTimeout(() => event.target.classList.add('selected'), 0);
             }
         });
@@ -22,6 +21,8 @@ export function initDraggable() {
         $(this).on('dragend', (event) => {
             event.target.classList.remove('selected');
             activeElement = null;
+            nextElement = null;
+            currentColumn = null;
         });
 
         $(this).on('dragover', (event) => {
