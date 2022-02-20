@@ -10,19 +10,43 @@ export function createjsPanel() {
     });
 
     $('.modal__btn').on('click', send)
+    
 }
 
-function send() {
+function send() { // убери это потом пж)
     var name = $('#name').val();
     var date = $('#date').val();
     var color = $('#color').val();
     var disc = $('#disc').val();
-
+    let $card = $(
+        '<div class="column__item" draggable="true">  \
+        <div class="item__inner">\
+            <div class="item__priority" style="background-color:'+ color + ';" >\
+            </div>\
+            <div class="item__head">\
+                <span class="item__title">' + name + '</span>\
+                <span class="item__date">' + date + '</span>\
+            </div>\
+            <div class="item__content">\
+                <span class="item__textContent">'+ disc +'</span>\
+            </div>\
+        </div>\
+    </div>')
+   
     $.ajax({
         type: "POST",
         url: "/server/new-card.php",
-        data: { name: name, date: date, color: color, disc: disc},
-        success: (response) =>console.log(response),
+        data: { name: name, date: date, color: color, disc: disc },
+        success: (response) => {
+            
+            if(response.match(/^[0-9]+$/) != null) {
+                $(".column__content:first").prepend($card)
+                $(".column__item:first").attr("data-id-event",response)
+            }
+            else
+            alert(response)
+        } ,
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
+    
 }

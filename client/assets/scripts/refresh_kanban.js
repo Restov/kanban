@@ -4,7 +4,7 @@ export function refreshKanban() {
         url: "/server/refresh.php",
         dataType: "text", 
         success: (response) =>
-            console.log(JSON.stringify(response)),
+            console.log(response),
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
 }
