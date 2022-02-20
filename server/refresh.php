@@ -2,13 +2,6 @@
 
 include "db.php";
 
-function checkPostIsSet()
-{
-    if (empty($_POST['name'])) return -1;
-    if (empty($_POST['date'])) return -1;
-    if (empty($_POST['disc'])) return -1;
-    return 0;
-}
 $ourData = file_get_contents("../client/assets/data.json");
 
 $object = json_decode($ourData);

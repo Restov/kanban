@@ -26,10 +26,9 @@ $name = $_POST['name'];
 $date = $_POST['date'];
 $disc = $_POST['disc'];
 $color = $_POST['color'];
-//$pole_id = $_POST['pole_id'];
 $pole_id = 0;
-//$pos = $_POST['pos'];
 $pos = 0;
+
 $res = checkPostIsSet();
 if ($res == 0) {
     createnNewEvent($conn, $name, $date, $disc, $color, $pole_id, $pos);
