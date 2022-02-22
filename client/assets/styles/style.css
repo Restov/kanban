@@ -3,6 +3,8 @@ body {
     font-family: 'Roboto';
     font-size: 16px;
     line-height: 19px;
+    margin: 0;
+    padding: 0;
 
     box-sizing: border-box;
 }
@@ -12,7 +14,10 @@ button {
 }
 
 .canban {
-    padding: 25px 35px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 35px 0;
+    /* min-width: min-content; */
 }
 
 .canban__head {
@@ -38,12 +43,17 @@ button {
     background: #FFC047;
     border-radius: 10px;
     border: none;
-
 }
 
 .canban__columns {
+    height: calc(100vh - 95px);
+    overflow-x: auto;
+}
+
+.columns__wrapper {
     display: flex;
     gap: 30px;
+    min-width: min-content;
 }
 
 .column {
