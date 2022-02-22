@@ -75,7 +75,6 @@ function renderCards(cards) {
     }
 
     cards.forEach((element, index, arr) => {
-        // element['num_pos'] = index;
         let item = arr.find((element) => parseFloat(element['num_pos']) === index);
 
         let card = getInnerCard(item['id'], item['color_sob'], item['name'], item['date_create'], item['opisanie'])
