@@ -3,7 +3,7 @@ export function initDraggable() {
     let activeElement = null;
     let currentColumn = null;
 
-    $('.column').each(function(index) {
+    $('.column').each(function (index) {
         const $events = $(this).find('.column__item');
 
         $events.each((index, event) => {
@@ -35,14 +35,14 @@ export function initDraggable() {
             const currentElement = event.target;
 
             const isMoveable = activeElement !== currentElement.parentNode &&
-                    currentElement.parentNode.classList.contains(`column__item`);
+                currentElement.parentNode.classList.contains(`column__item`);
 
             if (!isMoveable) {
                 return;
             }
 
             nextElement = (currentElement.parentNode === activeElement.nextElementSibling) ?
-                        currentElement.parentNode.nextElementSibling : currentElement.parentNode;
+                currentElement.parentNode.nextElementSibling : currentElement.parentNode;
 
             $(this).find('.column__content')[0].insertBefore(activeElement, nextElement);
 
@@ -96,7 +96,7 @@ function sendPositionsAfterDrag(activeElement, currentColumn, index) {
         type: 'POST',
         url: '/server/update-pos.php',
         data,
-      //  success: () => console.log('Positions have been updated.'),
+        //  success: () => console.log('Positions have been updated.'),
         success: (responce) => console.log(responce),
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });

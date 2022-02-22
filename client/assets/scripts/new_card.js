@@ -8,7 +8,7 @@ export function createjsPanel() {
             width: 400,
             height: 400
         },
-        content: '<input type="text" id="name" /> <input type="date" id="date" /><input type="color" id="color" /><input type="text" id="disc" /><p><button class="modal__btn">Send</button></p> '
+        content: '<input type="text" id="name" value="Карточка"/> <input type="date" id="date" value="2022-01-01" /><input type="color" id="color" /><input type="text" id="disc" value = "Описание" /><p><button class="modal__btn">Send</button></p> '
     });
 
     $('.modal__btn').on('click', send);

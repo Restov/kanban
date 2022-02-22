@@ -31,8 +31,8 @@ $pos = 0;
 
 $res = checkPostIsSet();
 if ($res == 0) {
-   $new_id = createnNewEvent($conn, $name, $date, $disc, $color, $pole_id, $pos);
-   echo $new_id;
+    $new_id = createnNewEvent($conn, $name, $date, $disc, $color, $pole_id, $pos);
+    echo $new_id;
 } else {
     echo "Не все поля заполнены";
 }
