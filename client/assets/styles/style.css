@@ -46,7 +46,6 @@ button {
     gap: 30px;
 }
 
-
 .column {
     display: flex;
     flex-direction: column;
@@ -69,10 +68,12 @@ button {
 .column__content::-webkit-scrollbar {
     width: 6px;
 }
+
 .column__content::-webkit-scrollbar-track {
     background: rgb(255, 255, 255);
     border-radius: 20px;
 }
+
 .column__content::-webkit-scrollbar-thumb {
     background-color: rgb(255, 215, 104);
     border-radius: 20px;
@@ -91,13 +92,11 @@ button {
 
 .column__title {
     color: #FFFFFF;
-    /* padding: 10px; */
 }
 
 .column__edit {
     background: transparent;
     border: none;
-    /* margin-right: 10px; */
 }
 
 .column__wrapper {

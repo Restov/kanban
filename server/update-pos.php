@@ -36,7 +36,7 @@ $positions = explode(" ",$positions);
 $newpos = array();
 foreach($positions as $pos){
     $pos = substr($pos, 2);
-    array_push($newpos,$pos); 
+    array_push($newpos,$pos);
 }
 
 if($lastpolid != $newcol)
@@ -47,4 +47,3 @@ for($i = 0; $i < count($newpos); ++$i)
     $temp = $newpos[$i];
     createQuery($conn,"UPDATE events SET num_pos = '$i', id_pole = '$newcol' WHERE id = '$temp'");
 }
-

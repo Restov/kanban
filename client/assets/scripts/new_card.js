@@ -10,14 +10,13 @@ export function createjsPanel() {
     });
 
     $('.modal__btn').on('click', send);
-
 }
 
 function send() { // убери это потом пж)
-    var name = $('#name').val();
-    var date = $('#date').val();
-    var color = $('#color').val();
-    var disc = $('#disc').val();
+    let name = $('#name').val();
+    let date = $('#date').val();
+    let color = $('#color').val();
+    let disc = $('#disc').val();
 
     let $card = $(
         `<div class="column__item">
@@ -38,7 +37,6 @@ function send() { // убери это потом пж)
         url: "/server/new-card.php",
         data: { name, date, color, disc },
         success: (response) => {
-
             if(response.match(/^[0-9]+$/) != null) {
                 $(".column__content:first").prepend($card);
                 $(".column__item:first").attr("data-id-event",response);
@@ -48,5 +46,4 @@ function send() { // убери это потом пж)
         } ,
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
-
 }
