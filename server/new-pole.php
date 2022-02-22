@@ -16,4 +16,4 @@ if (!$conn) {
 $title = $_POST['title'];
 $id = $_POST['id'];
 
-createnNewPole($conn,$title,0);
+createnNewPole($conn, $title, $id);
