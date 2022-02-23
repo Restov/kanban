@@ -197,3 +197,129 @@ button {
 .selected {
     opacity: 0;
 }
+
+.modal {
+    border: 1px solid;
+    width: 350px;
+
+}
+
+.modal__inner {
+    padding: 40px;
+}
+
+.modal__input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.modal__color {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.input__edit {
+    position: absolute;
+    top: -3px;
+    right: 0;
+}
+
+.button__edit {
+    background: transparent;
+    border: none;
+    color: #A1A1A1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.edit__image {
+    fill: #A1A1A1;
+    margin-right: 5px;
+}
+
+.input__title {
+    color: #1A252F;
+    margin-bottom: 15px;
+}
+
+.input__name,
+.input__date,
+.input__description {
+    border: 1px solid #DBDADA;
+    padding: 15px;
+    border-radius: 5px;
+    transition: border .2s linear;
+}
+
+.input__name:focus,
+.input__date:focus,
+.input__description:focus {
+    border: 1px solid #FFC047;
+    outline: none;
+}
+
+::-webkit-calendar-picker-indicator{
+    transition: background .2s linear;
+    background: url('../img/calendar.svg') no-repeat;
+}
+
+.input__date:focus::-webkit-calendar-picker-indicator{
+    background: url('../img/calendar-focus.svg') no-repeat;
+}
+
+.input__color::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 2px;
+}
+
+.input__color::-webkit-color-swatch {
+    border: none;
+    border-radius: 2px;
+}
+
+.input__color {
+    border: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.color__title {
+    margin-right: 5px;
+}
+
+.input__description {
+    resize: none;
+}
+
+.input__description::-webkit-scrollbar {
+    width: 6px;
+}
+.input__description::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+.input__description::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 215, 104);
+    border-radius: 20px;
+}
+
+.btn__next {
+    color: #fff;
+    width: 100%;
+    background: #FFC047;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    transition: background .2s linear;
+}
+
+.btn__next:hover {
+    background: #ffad15;
+}
+
