@@ -3,6 +3,8 @@ body {
     font-family: 'Roboto';
     font-size: 16px;
     line-height: 19px;
+    margin: 0;
+    padding: 0;
 
     box-sizing: border-box;
 }
@@ -12,7 +14,10 @@ button {
 }
 
 .canban {
-    padding: 25px 35px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 35px 0;
+    /* min-width: min-content; */
 }
 
 .canban__head {
@@ -38,14 +43,18 @@ button {
     background: #FFC047;
     border-radius: 10px;
     border: none;
-
 }
 
 .canban__columns {
-    display: flex;
-    gap: 30px;
+    height: calc(100vh - 95px);
+    overflow-x: auto;
 }
 
+.columns__wrapper {
+    display: flex;
+    gap: 30px;
+    min-width: min-content;
+}
 
 .column {
     display: flex;
@@ -69,10 +78,12 @@ button {
 .column__content::-webkit-scrollbar {
     width: 6px;
 }
+
 .column__content::-webkit-scrollbar-track {
     background: rgb(255, 255, 255);
     border-radius: 20px;
 }
+
 .column__content::-webkit-scrollbar-thumb {
     background-color: rgb(255, 215, 104);
     border-radius: 20px;
@@ -91,13 +102,11 @@ button {
 
 .column__title {
     color: #FFFFFF;
-    /* padding: 10px; */
 }
 
 .column__edit {
     background: transparent;
     border: none;
-    /* margin-right: 10px; */
 }
 
 .column__wrapper {
@@ -162,7 +171,6 @@ button {
     height: 9px;
     margin-bottom: 10px;
 
-    /* background: #E99D42; */
     border-radius: 5px;
 }
 

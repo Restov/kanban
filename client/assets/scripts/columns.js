@@ -1,7 +1,7 @@
 import { refreshKanban } from "./refresh_kanban.js";
 
 export function createColumn() {
-    let id = $('.columns').length;
+    let id = $('.column').length;
 
     let data = {
         title: 'Пустое поле',

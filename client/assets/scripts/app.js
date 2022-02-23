@@ -1,9 +1,12 @@
 import { createColumn } from "./columns.js";
-import { createjsPanel } from "./new_card.js";
-import { initDraggable } from "./dragNdrop.js"
 import { refreshKanban } from "./refresh_kanban.js";
 
-$('.add__card').on('click', createjsPanel);
-$('.r').on('click', refreshKanban);
+$(document).ready(() => {
+    $.ajax({
+        type: 'GET',
+        url: '/server/createTables.php'
+    });
+
+    refreshKanban();
+});
 $('.add__columns').on('click', createColumn);
-initDraggable();
