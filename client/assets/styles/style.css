@@ -198,6 +198,8 @@ button {
 .item__textContent {
     font-size: 14px;
     line-height: 16px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 
     color: #A1A1A1;
 }
@@ -330,4 +332,3 @@ button {
 .btn__next:hover {
     background: #ffad15;
 }
-
