@@ -1,0 +1,334 @@
+body {
+    background-color: #F8F8F8;;
+    font-family: 'Roboto';
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+.canban {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 35px 0;
+    /* min-width: min-content; */
+}
+
+.canban__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    width: 71px;
+    height: 28px;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.add__columns {
+    width: 200px;
+    height: 40px;
+
+    color: #FFFFFF;
+    background: #FFC047;
+    border-radius: 10px;
+    border: none;
+}
+
+.canban__columns {
+    height: calc(100vh - 95px);
+    overflow-x: auto;
+}
+
+.columns__wrapper {
+    display: flex;
+    gap: 30px;
+    min-width: min-content;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+
+    width: 260px;
+    height: 484px;
+    margin-top: 33px;
+
+    background: #FDF8EF;
+    border-radius: 2px 2px 10px 10px;
+
+}
+
+.column__content {
+    overflow-y: auto;
+    height: 100%;
+    padding-right: 10px;
+}
+
+.column__content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.column__content::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+.column__content::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 215, 104);
+    border-radius: 20px;
+}
+
+.column__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(89.98deg, #FFC047 0.01%, #FAD48C 93.74%, #FFE8BB 99.99%, #FACE79 99.99%);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.column__title {
+    color: #FFFFFF;
+}
+
+.column__edit {
+    background: transparent;
+    border: none;
+}
+
+.column__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 394px;
+    padding: 12px;
+}
+
+.add__card {
+    width: 100%;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    color: #FFC047;
+
+    background: #FFFFFF;
+    border: 1px solid #FFC047;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    transition: background .2s linear, color .2s linear;
+
+    margin-bottom: 25px;
+}
+
+.add__image {
+    fill: #FFC047;
+    transition: fill .2s linear;
+}
+
+.add__card:hover {
+    background: #FFC047;
+    color: #FFFFFF;
+}
+
+.add__card:hover .add__image {
+    fill: #FFFFFF;
+}
+
+.add__cardText {
+    margin-left: 10px;
+}
+
+.column__item {
+    width: 100%;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    margin-bottom: 25px;
+
+    background: #FFFFFF;
+}
+
+.item__inner {
+    padding: 8px 12px 18px;
+}
+
+.item__priority {
+    width: 44px;
+    height: 9px;
+    margin-bottom: 10px;
+
+    border-radius: 5px;
+}
+
+.item__head {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.item__title {
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #000000;
+}
+
+.item__date {
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #A1A1A1;
+}
+
+.item__textContent {
+    font-size: 14px;
+    line-height: 16px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+
+    color: #A1A1A1;
+}
+
+.selected {
+    opacity: 0;
+}
+
+.modal {
+    border: 1px solid;
+    width: 350px;
+
+}
+
+.modal__inner {
+    padding: 40px;
+}
+
+.modal__input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.modal__color {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.input__edit {
+    position: absolute;
+    top: -3px;
+    right: 0;
+}
+
+.button__edit {
+    background: transparent;
+    border: none;
+    color: #A1A1A1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.edit__image {
+    fill: #A1A1A1;
+    margin-right: 5px;
+}
+
+.input__title {
+    color: #1A252F;
+    margin-bottom: 15px;
+}
+
+.input__name,
+.input__date,
+.input__description {
+    border: 1px solid #DBDADA;
+    padding: 15px;
+    border-radius: 5px;
+    transition: border .2s linear;
+}
+
+.input__name:focus,
+.input__date:focus,
+.input__description:focus {
+    border: 1px solid #FFC047;
+    outline: none;
+}
+
+::-webkit-calendar-picker-indicator{
+    transition: background .2s linear;
+    background: url('../img/calendar.svg') no-repeat;
+}
+
+.input__date:focus::-webkit-calendar-picker-indicator{
+    background: url('../img/calendar-focus.svg') no-repeat;
+}
+
+.input__color::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 2px;
+}
+
+.input__color::-webkit-color-swatch {
+    border: none;
+    border-radius: 2px;
+}
+
+.input__color {
+    border: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.color__title {
+    margin-right: 5px;
+}
+
+.input__description {
+    resize: none;
+}
+
+.input__description::-webkit-scrollbar {
+    width: 6px;
+}
+.input__description::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+.input__description::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 215, 104);
+    border-radius: 20px;
+}
+
+.btn__next {
+    color: #fff;
+    width: 100%;
+    background: #FFC047;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    transition: background .2s linear;
+}
+
+.btn__next:hover {
+    background: #ffad15;
+}
