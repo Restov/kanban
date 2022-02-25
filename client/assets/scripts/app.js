@@ -7,7 +7,5 @@ $(document).ready(() => {
         url: '/server/createTables.php',
         success: () =>  refreshKanban()
     });
-
-   
 });
 $('.add__columns').on('click', createColumn);

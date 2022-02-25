@@ -1,7 +1,13 @@
 import { refreshKanban } from "./refresh_kanban.js";
 
+let modal = null;
+
 export function createjsPanel() {
-    jsPanel.create({
+    if (modal) {
+        return;
+    }
+
+    modal = jsPanel.create({
         headerTitle: "",
         headerControls: {
             maximize: 'remove',
@@ -38,7 +44,7 @@ export function createjsPanel() {
         </div>
         <div class="modal__color">
             <span class="color__title">
-                Выберите цвет: 
+                Выберите цвет:
             </span>
             <input id="color" type="color" class="input__color">
         </div>
@@ -67,7 +73,10 @@ function send() {
         data: { name, date, color, disc },
         success: () => {
             refreshKanban();
+            modal.close();
         },
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
 }
+
+$(document).on('jspanelclosed', () => modal = null);
