@@ -4,9 +4,10 @@ import { refreshKanban } from "./refresh_kanban.js";
 $(document).ready(() => {
     $.ajax({
         type: 'GET',
-        url: '/server/createTables.php'
+        url: '/server/createTables.php',
+        success: () =>  refreshKanban()
     });
 
-    refreshKanban();
+   
 });
 $('.add__columns').on('click', createColumn);
