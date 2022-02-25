@@ -58,10 +58,7 @@ export function createjsPanel() {
     </div>`
     });
 
-    $('.btn__next').on('click', () => {
-        send();
-        modal.close();
-    });
+    $('.btn__next').on('click', send);
 }
 
 function send() {
@@ -76,6 +73,7 @@ function send() {
         data: { name, date, color, disc },
         success: () => {
             refreshKanban();
+            modal.close();
         },
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });
