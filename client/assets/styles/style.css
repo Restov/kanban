@@ -43,6 +43,12 @@ button {
     background: #FFC047;
     border-radius: 10px;
     border: none;
+
+    transition: background .2s linear;
+}
+
+.add__columns:hover {
+    background: #ffad15;
 }
 
 .canban__columns {
