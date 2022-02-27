@@ -77,8 +77,8 @@ function send() {
         url: "/server/new-card.php",
         data: { name, date, color, disc },
         success: () => {
-            refreshKanban();
             modal.close();
+            refreshKanban();
         },
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });

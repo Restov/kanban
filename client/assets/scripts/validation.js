@@ -2,7 +2,10 @@ export function checkValidation() {
     let incorrect = null;
 
     $('.modal__input input, .modal__input textarea').each(function() {
-        this.value = this.value.trim()
+        this.value = this.value.trim();
+    });
+
+    $('.modal__input input').each(function() {
         this.classList.remove('correct', 'incorrect');
 
         if (checkInput(this)) {
