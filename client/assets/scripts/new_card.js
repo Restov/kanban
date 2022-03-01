@@ -1,4 +1,5 @@
 import { refreshKanban } from "./refresh_kanban.js";
+import { checkValidation } from "./validation.js";
 
 let modal = null;
 
@@ -62,6 +63,10 @@ export function createjsPanel() {
 }
 
 function send() {
+    if (!checkValidation()) {
+        return alert('Не все поля заполнены верно!');
+    }
+
     let name = $('#name').val();
     let date = $('#date').val();
     let color = $('#color').val();
@@ -72,8 +77,8 @@ function send() {
         url: "/server/new-card.php",
         data: { name, date, color, disc },
         success: () => {
-            refreshKanban();
             modal.close();
+            refreshKanban();
         },
         error: (jqXHR, textStatus, errorThrown) => console.log(textStatus, errorThrown)
     });

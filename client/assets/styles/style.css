@@ -43,6 +43,12 @@ button {
     background: #FFC047;
     border-radius: 10px;
     border: none;
+
+    transition: background .2s linear;
+}
+
+.add__columns:hover {
+    background: #ffad15;
 }
 
 .canban__columns {
@@ -331,4 +337,12 @@ button {
 
 .btn__next:hover {
     background: #ffad15;
+}
+
+.correct {
+    border-color: rgb(5, 235, 81);
+}
+
+.incorrect {
+    border-color: rgb(255, 131, 109);
 }
