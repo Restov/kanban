@@ -45,8 +45,8 @@ export function initDraggable() {
                 currentElement.parentNode.nextElementSibling : currentElement.parentNode;
 
             $(this).find('.column__content')[0].insertBefore(activeElement, nextElement);
-
-            sendPositionsAfterDrag(activeElement, this, index);
+            currentColumn = this;
+            nextElement = null;
         });
 
         $(this).on('drop', () => {
@@ -57,8 +57,9 @@ export function initDraggable() {
             if (this !== currentColumn && !nextElement) {
                 $(this).find('.column__content')[0].append(activeElement);
 
-                sendPositionsAfterDrag(activeElement, this, index);
             }
+
+            sendPositionsAfterDrag(activeElement, this, index);
         });
     });
 };
